@@ -27,12 +27,36 @@ export const theloai = [
   },
 ];
 
-export const groceries = [
+export const sach = [
   {
     id: 1,
-    name: 'Pulses',
-    photo: require('../../../../assets/Image/Lovepik.png'),
-    description: 'Pulses',
+    name: 'Sách 1',
+    photo: require('../../assets/image/sach1.jpg'),
+  },
+  {
+    id: 2,
+    name: 'Sách 2',
+    photo: require('../../assets/image/sach2.jpg'),
+  },
+  {
+    id: 3,
+    name: 'Sách 3',
+    photo: require('../../assets/image/sach3.jpg'),
+  },
+  {
+    id: 4,
+    name: 'Sách 4',
+    photo: require('../../assets/image/sach4.jpg'),
+  },
+  {
+    id: 5,
+    name: 'Sách 5',
+    photo: require('../../assets/image/sach5.jpg'),
+  },
+  {
+    id: 6,
+    name: 'Sách 6 ',
+    photo: require('../../assets/image/sach6.jpg'),
   },
 ];
 

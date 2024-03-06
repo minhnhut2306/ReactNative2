@@ -1,5 +1,7 @@
 import {StyleSheet, Text, View, Image} from 'react-native';
 import React from 'react';
+import Categories from './Categories';
+import Book from './Book';
 
 const B2 = () => {
   return (
@@ -21,9 +23,23 @@ const B2 = () => {
           />
         </View>
       </View>
-      <View style={styles.conten}>
-        <Text style={styles.textcategories}>Categories</Text>
-        <Text style={styles.textseemore}>See more</Text>
+      <View style={styles.contaitheloa}>
+        <View style={styles.conten}>
+          <Text style={styles.textcategories}>Categories</Text>
+          <Text style={styles.textseemore}>See more</Text>
+        </View>
+        <View style={{left:17,}}>
+          <Categories />
+        </View>
+      </View>
+      <View style={styles.contaisanpham}>
+        <View style={styles.conten}>
+          <Text style={styles.textcategories}>Recommended For You</Text>
+          <Text style={styles.textseemore}>See more</Text>
+        </View>
+        <View style={{ left:17,}}>
+          <Book />
+        </View>
       </View>
     </View>
   );
@@ -78,27 +94,33 @@ const styles = StyleSheet.create({
     flexShrink: 0,
   },
   conten: {
-    marginTop: 40,
     display: 'flex',
     flexDirection: 'row',
     justifyContent: 'space-between',
     gap: 12,
     flexShrink: 0,
-    padding:24,
+    padding: 24,
   },
-  textcategories:{
+  textcategories: {
     fontFamily: 'Poppins',
     fontSize: 16,
     color: '#010104',
     fontStyle: 'normal',
     fontWeight: '500',
   },
-  textseemore:{
+  textseemore: {
     fontFamily: 'Poppins',
     fontSize: 14,
     color: '#4838D1',
     fontStyle: 'normal',
     fontWeight: '500',
-    textAlign:'right',
+    textAlign: 'right',
+    right: 10,
+  },
+  contaitheloa: {
+  
+    marginTop: 40,
+  },
+  contaisanpham:{
   }
 });

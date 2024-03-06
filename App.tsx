@@ -1,14 +1,21 @@
 import React from 'react';
-import {SafeAreaView, StatusBar, Text, View} from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import B1 from './src/BaiTap/B1';
+import B2 from './src/BaiTap/B2';
+import Categories from './src/BaiTap/Categories';
+const Stack = createStackNavigator();
 
-function App(): React.JSX.Element {
+function App(): React.ReactElement {
   return (
-    <SafeAreaView>
-      <StatusBar />
-      <View>
-        <Text>Nguyễn Minh Nhựt</Text>
-      </View>
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName='Categories'>
+        <Stack.Screen name="B1" component={B1} options={{ headerShown: false}} />
+        <Stack.Screen name="B2" component={B2} options={{ headerShown: false}} />
+        <Stack.Screen name="Categories" component={Categories} options={{ headerShown: false}} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
+
 export default App;

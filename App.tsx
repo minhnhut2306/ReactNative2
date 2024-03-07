@@ -14,7 +14,7 @@ const Stack = createStackNavigator();
 function App(): React.ReactElement {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName='B3'>
+      <Stack.Navigator initialRouteName='B2'>
         <Stack.Screen name="B1" component={B1} options={{ headerShown: false}} />
         <Stack.Screen name="B2" component={B2} options={{ headerShown: false}} />
         <Stack.Screen name="Categories" component={Categories} options={{ headerShown: false}} />

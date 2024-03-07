@@ -1,17 +1,36 @@
-import {View, Text, Image, StyleSheet, FlatList} from 'react-native';
-import React, { useEffect, useState } from 'react';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import {sach} from './Product';
+import {useNavigation} from '@react-navigation/native';
 
 const Book = () => {
+  const navigation = useNavigation();
   const [randomProducts, setRandomProducts] = useState([]);
-  useEffect(() => { 
+  const handlePress = item => {
+    navigation.navigate('B3', {
+      name: item.name,
+      image: item.photo,
+    });
+  };
+
+  useEffect(() => {
     const shuffledProducts = shuffleArray(sach);
     const numberOfRandomProducts = 5;
-    const selectedRandomProducts = shuffledProducts.slice(0, numberOfRandomProducts);
+    const selectedRandomProducts = shuffledProducts.slice(
+      0,
+      numberOfRandomProducts,
+    );
     setRandomProducts(selectedRandomProducts);
   }, []);
 
-  const shuffleArray = (array) => {
+  const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -21,11 +40,13 @@ const Book = () => {
   console.log(sach);
   const renderItem = ({item}) => {
     return (
-      <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.container}
+        onPress={() => handlePress(item)}>
         <View style={{alignItems: 'center'}}>
           <Image style={styles.image} source={item.photo} />
         </View>
-      </View>
+      </TouchableOpacity>
     );
   };
   return (

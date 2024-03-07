@@ -1,9 +1,18 @@
 import React, {useEffect, useState} from 'react';
-import {StyleSheet, Text, View, Image, FlatList} from 'react-native';
+import {StyleSheet, Text, View, Image, FlatList, TouchableOpacity} from 'react-native';
 import {sach} from './Product';
+import {useNavigation} from '@react-navigation/native';
 
 const Book3 = () => {
   const [randomProducts, setRandomProducts] = useState([]);
+  const navigation = useNavigation();
+
+  const handlePress = item => {
+    navigation.navigate('B3', {
+      name: item.name,
+      image: item.photo,
+    });
+  };
 
   useEffect(() => {
     const shuffledProducts = shuffleArray(sach);
@@ -25,10 +34,12 @@ const Book3 = () => {
 
   const renderItem = ({item}) => {
     return (
-      <View style={styles.container}>
-        <Image style={styles.avatar} source={item.photo} />
-        <Text style={styles.name}>{item.name} </Text>
-      </View>
+      <TouchableOpacity onPress={() => handlePress(item)}>
+        <View style={styles.container}>
+          <Image style={styles.avatar} source={item.photo} />
+          <Text style={styles.name}>{item.name} </Text>
+        </View>
+      </TouchableOpacity>
     );
   };
 

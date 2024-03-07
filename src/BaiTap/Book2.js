@@ -1,18 +1,36 @@
-import {StyleSheet, Text, View, Image,FlatList} from 'react-native';
-import React, { useEffect, useState } from 'react';
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  FlatList,
+  TouchableOpacity,
+} from 'react-native';
+import React, {useEffect, useState} from 'react';
 import {sach} from './Product';
-
+import {useNavigation} from '@react-navigation/native';
 const Book2 = () => {
   const [randomProducts, setRandomProducts] = useState([]);
+  const navigation = useNavigation();
 
-  useEffect(() => { 
+  const handlePress = item => {
+    navigation.navigate('B3', {
+      name: item.name,
+      image: item.photo,
+    });
+  };
+
+  useEffect(() => {
     const shuffledProducts = shuffleArray(sach);
     const numberOfRandomProducts = 5;
-    const selectedRandomProducts = shuffledProducts.slice(0, numberOfRandomProducts);
+    const selectedRandomProducts = shuffledProducts.slice(
+      0,
+      numberOfRandomProducts,
+    );
     setRandomProducts(selectedRandomProducts);
   }, []);
 
-  const shuffleArray = (array) => {
+  const shuffleArray = array => {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
       [array[i], array[j]] = [array[j], array[i]];
@@ -21,40 +39,40 @@ const Book2 = () => {
   };
   const renderItem = ({item}) => {
     return (
-      <View>
-        <View style={styles.contaitong}>
-          <View>
-            <Image style={styles.image} source={item.photo} />
-          </View>
-          <View style={{marginLeft: 16}}>
-            <Text style={styles.textlight}>{item.name}</Text>
-            <Text style={styles.textlaurie}>Laurie Forest</Text>
-            <View style={styles.contaistar}>
-              <Image
-                style={styles.star1}
-                source={require('../../assets/image/star.png')}
-              />
-              <Image
-                style={styles.star}
-                source={require('../../assets/image/star.png')}
-              />
-              <Image
-                style={styles.star}
-                source={require('../../assets/image/star.png')}
-              />
-              <Image
-                style={styles.star}
-                source={require('../../assets/image/star.png')}
-              />
-              <Image
-                style={styles.star}
-                source={require('../../assets/image/star1.png')}
-              />
-            </View>
-            <Text style={styles.textlaurie}>1,000+ Listeners</Text>
-          </View>
+      <TouchableOpacity
+        style={styles.contaitong}
+        onPress={() => handlePress(item)}>
+        <View>
+          <Image style={styles.image} source={item.photo} />
         </View>
-      </View>
+        <View style={{marginLeft: 16}}>
+          <Text style={styles.textlight}>{item.name}</Text>
+          <Text style={styles.textlaurie}>Laurie Forest</Text>
+          <View style={styles.contaistar}>
+            <Image
+              style={styles.star1}
+              source={require('../../assets/image/star.png')}
+            />
+            <Image
+              style={styles.star}
+              source={require('../../assets/image/star.png')}
+            />
+            <Image
+              style={styles.star}
+              source={require('../../assets/image/star.png')}
+            />
+            <Image
+              style={styles.star}
+              source={require('../../assets/image/star.png')}
+            />
+            <Image
+              style={styles.star}
+              source={require('../../assets/image/star1.png')}
+            />
+          </View>
+          <Text style={styles.textlaurie}>1,000+ Listeners</Text>
+        </View>
+      </TouchableOpacity>
     );
   };
   return (
@@ -76,7 +94,6 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     backgroundColor: '#fff',
-    
   },
   contaitong: {
     width: 'auto',

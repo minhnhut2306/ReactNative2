@@ -1,47 +1,81 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, ScrollView} from 'react-native';
 import React from 'react';
 import Categories from './Categories';
 import Book from './Book';
+import Book2 from './Book2';
+import Book3 from './Book3';
 
 const B2 = () => {
+  
   return (
-    <View style={styles.container}>
-      <View style={styles.header}>
-        <View style={styles.headerlogo}>
-          <Image
-            style={styles.imagelogo}
-            source={require('../../assets/image/logo.png')}
-          />
-          <Text style={styles.textlogo}>
-            Audi<Text style={{fontWeight: 'normal'}}>Books.</Text>
-          </Text>
+    <ScrollView>
+      <View style={styles.container}>
+        <View style={styles.header}>
+          <View style={styles.headerlogo}>
+            <Image
+              style={styles.imagelogo}
+              source={require('../../assets/image/logo.png')}
+            />
+            <Text style={styles.textlogo}>
+              Audi<Text style={{fontWeight: 'normal'}}>Books.</Text>
+            </Text>
+          </View>
+          <View style={styles.contaisetting}>
+            <Image
+              style={styles.imagesettings}
+              source={require('../../assets/image/Setting.png')}
+            />
+          </View>
         </View>
-        <View style={styles.contaisetting}>
-          <Image
-            style={styles.imagesettings}
-            source={require('../../assets/image/Setting.png')}
-          />
+        <View style={styles.containersptong} >
+          <View style={styles.contaitheloa}>
+            <View style={styles.conten}>
+              <Text style={styles.textcategories}>Categories</Text>
+              <Text style={styles.textseemore}>See more</Text>
+            </View>
+            <View style={{left: 10}}>
+              <Categories />
+            </View>
+          </View>
+          <View style={styles.contaisanpham}>
+            <View style={styles.conten}>
+              <Text style={styles.textcategories}>Recommended For You</Text>
+              <Text style={styles.textseemore}>See more</Text>
+            </View>
+            <View style={{left: 10}}>
+              <Book />
+            </View>
+          </View>
+          <View style={styles.contaisanpham}>
+            <View style={styles.conten}>
+              <Text style={styles.textcategories}>Best Seller</Text>
+              <Text style={styles.textseemore}>See more</Text>
+            </View>
+            <View style={{left: 10}}>
+              <Book2 />
+            </View>
+          </View>
+          <View style={styles.contaitheloa}>
+            <View style={styles.conten}>
+              <Text style={styles.textcategories}>Categories</Text>
+              <Text style={styles.textseemore}>See more</Text>
+            </View>
+            <View style={{left: 10}}>
+              <Book3 />
+            </View>
+          </View>
+          <View style={styles.contaitheloai}>
+            <View style={styles.conten}>
+              <Text style={styles.textcategories}>Categories</Text>
+              <Text style={styles.textseemore}>See more</Text>
+            </View>
+            <View style={{left: 10}}>
+              <Book3 />
+            </View>
+          </View>
         </View>
       </View>
-      <View style={styles.contaitheloa}>
-        <View style={styles.conten}>
-          <Text style={styles.textcategories}>Categories</Text>
-          <Text style={styles.textseemore}>See more</Text>
-        </View>
-        <View style={{left:17,}}>
-          <Categories />
-        </View>
-      </View>
-      <View style={styles.contaisanpham}>
-        <View style={styles.conten}>
-          <Text style={styles.textcategories}>Recommended For You</Text>
-          <Text style={styles.textseemore}>See more</Text>
-        </View>
-        <View style={{ left:17,}}>
-          <Book />
-        </View>
-      </View>
-    </View>
+    </ScrollView>
   );
 };
 
@@ -99,7 +133,8 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     gap: 12,
     flexShrink: 0,
-    padding: 24,
+    padding:24,
+    
   },
   textcategories: {
     fontFamily: 'Poppins',
@@ -118,9 +153,13 @@ const styles = StyleSheet.create({
     right: 10,
   },
   contaitheloa: {
-  
     marginTop: 40,
   },
-  contaisanpham:{
-  }
+  contaitheloai: {
+    marginTop: 40,
+    marginBottom: 40,
+  },
+  contaisanpham: {
+    width: '100%',
+  },
 });

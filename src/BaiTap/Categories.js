@@ -1,8 +1,24 @@
 import {StyleSheet, Text, View, FlatList} from 'react-native';
-import React from 'react';
-import {theloai} from './product';
+import React, { useEffect, useState } from 'react';
+import {theloai} from './Product';
 
 const Categories = () => {
+  const [randomProducts, setRandomProducts] = useState([]);
+
+  useEffect(() => { 
+    const shuffledProducts = shuffleArray(theloai);
+    const numberOfRandomProducts = 5;
+    const selectedRandomProducts = shuffledProducts.slice(0, numberOfRandomProducts);
+    setRandomProducts(selectedRandomProducts);
+  }, []);
+
+  const shuffleArray = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+  };
   const renderItem = ({item, index}) => {
     return (
       <View>

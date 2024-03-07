@@ -1,12 +1,28 @@
-import {View, Text, Image, StyleSheet, TextInput, Button} from 'react-native';
-import React from 'react';
+import {
+  View,
+  Text,
+  Image,
+  StyleSheet,
+  TextInput,
+  Button,
+  Alert,
+} from 'react-native';
+import React, {useState} from 'react';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
 const B1 = ({navigation}) => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [dob, setDob] = useState('');
   const clickme = () => {
-    navigation.navigate('B2');
+    if (email.trim() === '' || password.trim() === '' || dob.trim() === '') {
+      Alert.alert('Thông báo', 'Vui lòng nhập đầy đủ thông tin');
+      return;
+    } else {
+      Alert.alert('Thông báo', 'Đăng nhập thành công');
+      navigation.navigate('B2');
+    }
   };
-
   return (
     <View style={styles.container}>
       <View style={styles.contailogo}>
@@ -18,17 +34,25 @@ const B1 = ({navigation}) => {
       <View style={styles.contaitext}>
         <Text style={styles.textlogin}>Register</Text>
         <View style={styles.input}>
-          <TextInput style={styles.inputtext} placeholder="Email"></TextInput>
+          <TextInput
+            style={styles.inputtext}
+            placeholder="Email"
+            onChangeText={text => setEmail(text)}
+          />
         </View>
         <View style={styles.input}>
           <TextInput
             style={styles.inputtext}
-            placeholder="Password"></TextInput>
+            placeholder="Password"
+            onChangeText={text => setPassword(text)}
+          />
         </View>
         <View style={styles.input}>
           <TextInput
             style={styles.inputtext}
-            placeholder="Date of Birth"></TextInput>
+            placeholder="Date of Birth"
+            onChangeText={text => setDob(text)}
+          />
         </View>
         <View style={styles.contaiby}>
           <Text style={styles.textby}>
@@ -39,10 +63,8 @@ const B1 = ({navigation}) => {
           </Text>
         </View>
         <View style={styles.buttoncontai}>
-          <TouchableOpacity style={styles.button}>
-            <Text style={styles.textbutton} onPress={clickme()}>
-              Register
-            </Text>
+          <TouchableOpacity onPress={clickme} style={styles.button}>
+            <Text style={styles.textbutton}>Register</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.buttoncontaicanel}>

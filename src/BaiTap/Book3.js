@@ -70,6 +70,7 @@ const styles = StyleSheet.create({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    resizeMode:'cover'
   },
   name: {
     fontFamily: 'Poppins',
@@ -79,4 +80,5 @@ const styles = StyleSheet.create({
     color: '#9292A2',
     marginTop: 12,
   },
+  
 });

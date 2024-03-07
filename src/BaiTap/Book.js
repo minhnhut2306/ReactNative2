@@ -62,11 +62,16 @@ const Book = () => {
   );
 };
 const styles = StyleSheet.create({
+  contai: {
+    width: '100%',
+    backgroundColor: '#fff',
+  },
   image: {
     width: 200,
     height: 300,
     flexShrink: 0,
     marginLeft: 15,
+    resizeMode:'cover'
   },
 });
 

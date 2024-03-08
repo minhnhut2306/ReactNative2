@@ -13,9 +13,9 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 const B1 = ({navigation}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [dob, setDob] = useState('');
+  const [birday, setDob] = useState('');
   const clickme = () => {
-    if (email.trim() === '' || password.trim() === '' || dob.trim() === '') {
+    if (email.trim() === '' || password.trim() === '' || birday.trim() === '') {
       Alert.alert('Thông báo', 'Vui lòng nhập đầy đủ thông tin');
       return;
     } else {

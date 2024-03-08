@@ -41,7 +41,6 @@ const Book = () => {
   const renderItem = ({item}) => {
     return (
       <TouchableOpacity
-        style={styles.container}
         onPress={() => handlePress(item)}>
         <View style={{alignItems: 'center'}}>
           <Image style={styles.image} source={item.photo} />

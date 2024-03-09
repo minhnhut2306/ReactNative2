@@ -1,27 +1,25 @@
-import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
-const B3 = ({ route }) => {
-  const { name, image } = route.params;
+const B3 = ({route}) => {
+  const {name, image} = route.params;
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
         <View style={styles.headerlogo}>
           <TouchableOpacity onPress={() => navigation.goBack()}>
-
             <Image
               style={styles.imagelogo}
               source={require('../../assets/image/leftarrow.png')}
             />
-
           </TouchableOpacity>
           <Text style={styles.textlogo}>{name}</Text>
           {/* <Text style={styles.textlogo}>Sách 1</Text> */}
         </View>
       </View>
-      <View style={{ alignItems: 'center', marginTop: 48 }}>
+      <View style={{alignItems: 'center', marginTop: 48}}>
         <Image style={styles.imagesach} source={image} />
         {/* <Image
           style={styles.imagesach}
@@ -68,7 +66,7 @@ const B3 = ({ route }) => {
           </View>
           <View style={styles.contaistar}>
             <TouchableOpacity style={styles.buttonplay}>
-              <View style={{ flexDirection: 'row' }}>
+              <View style={{flexDirection: 'row'}}>
                 <Image
                   style={styles.imageplay}
                   source={require('../../assets/image/play.png')}
@@ -77,7 +75,7 @@ const B3 = ({ route }) => {
               </View>
             </TouchableOpacity>
             <TouchableOpacity style={styles.buttondocument}>
-              <View style={{ flexDirection: 'row' }}>
+              <View style={{flexDirection: 'row'}}>
                 <Image
                   style={styles.imagedoc}
                   source={require('../../assets/image/document.png')}
@@ -87,6 +85,11 @@ const B3 = ({ route }) => {
             </TouchableOpacity>
           </View>
         </View>
+        <Text style={styles.sum}>Summary</Text>
+        <Text style={styles.amet}>
+          Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet
+          sint. Velit officia
+        </Text>
       </View>
     </View>
   );
@@ -255,4 +258,19 @@ const styles = StyleSheet.create({
     fontStyle: 'normal',
     fontWeight: '500',
   },
+  sum: {
+    fontFamily: 'Poppins',
+    fontSize: 14,
+    color: '#9292A2',
+    fontStyle: 'normal',
+    fontWeight: '600',
+  },
+  amet: {
+    fontFamily: 'Poppins',
+    fontSize: 14,
+    color: '#6a6a8e',
+    fontStyle: 'normal',
+    fontWeight: '300',
+    marginTop: 12,
+  }
 });

@@ -18,11 +18,26 @@ const B1 = ({navigation}) => {
     if (email.trim() === '' || password.trim() === '' || birday.trim() === '') {
       Alert.alert('Thông báo', 'Vui lòng nhập đầy đủ thông tin');
       return;
+    } else if (!isValidEmail(email)) {
+      Alert.alert('Thông báo', 'Vui lòng nhập email hợp lệ');
+      return;
+    } else if (!isValidDate(birday)) {
+      Alert.alert('Thông báo', 'Vui lòng nhập ngày sinh hợp lệ');
+      return;
     } else {
       Alert.alert('Thông báo', 'Đăng nhập thành công');
       navigation.navigate('B2');
     }
   };
+  const isValidEmail = email => {
+    const checkemail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return checkemail.test(email);
+  };
+
+  const isValidDate = dateString => {
+    return !isNaN(Date.parse(dateString));
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.contailogo}>
@@ -51,7 +66,7 @@ const B1 = ({navigation}) => {
           <TextInput
             style={styles.inputtext}
             placeholder="Date of Birth"
-            onChangeText={text => setDob(text)}
+            onChangeText={Number => setDob(Number)}
           />
         </View>
         <View style={styles.contaiby}>

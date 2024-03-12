@@ -7,9 +7,8 @@ import bai2 from './bai2';
 const TabNavigationBai2 = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
-      <Stack.Screen name="bai1" component={bai1} />
       <Stack.Screen name="bai2" component={bai2} />
-      
+      <Stack.Screen name="bai1" component={bai1} />
     </Stack.Navigator>
   );
 };

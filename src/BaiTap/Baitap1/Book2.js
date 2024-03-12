@@ -51,23 +51,23 @@ const Book2 = () => {
           <View style={styles.contaistar}>
             <Image
               style={styles.star1}
-              source={require('../../assets/image/star.png')}
+              source={require('../../../assets/image/star.png')}
             />
             <Image
               style={styles.star}
-              source={require('../../assets/image/star.png')}
+              source={require('../../../assets/image/star.png')}
             />
             <Image
               style={styles.star}
-              source={require('../../assets/image/star.png')}
+              source={require('../../../assets/image/star.png')}
             />
             <Image
               style={styles.star}
-              source={require('../../assets/image/star.png')}
+              source={require('../../../assets/image/star.png')}
             />
             <Image
               style={styles.star}
-              source={require('../../assets/image/star1.png')}
+              source={require('../../../assets/image/star1.png')}
             />
           </View>
           <Text style={styles.textlaurie}>1,000+ Listeners</Text>

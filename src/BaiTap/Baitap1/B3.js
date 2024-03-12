@@ -12,7 +12,7 @@ const B3 = ({route}) => {
           <TouchableOpacity onPress={() => navigation.goBack()}>
             <Image
               style={styles.imagelogo}
-              source={require('../../assets/image/leftarrow.png')}
+              source={require('../../../assets/image/leftarrow.png')}
             />
           </TouchableOpacity>
           <Text style={styles.textlogo}>{name}</Text>
@@ -23,7 +23,7 @@ const B3 = ({route}) => {
         <Image style={styles.imagesach} source={image} />
         {/* <Image
           style={styles.imagesach}
-          source={require('../../assets/image/sach1.jpg')}
+          source={require('../../../assets/image/sach1.jpg')}
         /> */}
       </View>
       <View style={styles.contai1}>
@@ -33,23 +33,23 @@ const B3 = ({route}) => {
           <View style={styles.contaistar}>
             <Image
               style={styles.star1}
-              source={require('../../assets/image/star.png')}
+              source={require('../../../assets/image/star.png')}
             />
             <Image
               style={styles.star}
-              source={require('../../assets/image/star.png')}
+              source={require('../../../assets/image/star.png')}
             />
             <Image
               style={styles.star}
-              source={require('../../assets/image/star.png')}
+              source={require('../../../assets/image/star.png')}
             />
             <Image
               style={styles.star}
-              source={require('../../assets/image/star.png')}
+              source={require('../../../assets/image/star.png')}
             />
             <Image
               style={styles.star}
-              source={require('../../assets/image/star1.png')}
+              source={require('../../../assets/image/star1.png')}
             />
             <Text style={styles.textstar}>4.0</Text>
           </View>
@@ -69,7 +69,7 @@ const B3 = ({route}) => {
               <View style={{flexDirection: 'row'}}>
                 <Image
                   style={styles.imageplay}
-                  source={require('../../assets/image/play.png')}
+                  source={require('../../../assets/image/play.png')}
                 />
                 <Text style={styles.textplay}>Play Audio</Text>
               </View>
@@ -78,7 +78,7 @@ const B3 = ({route}) => {
               <View style={{flexDirection: 'row'}}>
                 <Image
                   style={styles.imagedoc}
-                  source={require('../../assets/image/document.png')}
+                  source={require('../../../assets/image/document.png')}
                 />
                 <Text style={styles.textdoc}>Read Book</Text>
               </View>

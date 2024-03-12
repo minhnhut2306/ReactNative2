@@ -43,7 +43,7 @@ const B1 = ({navigation}) => {
       <View style={styles.contailogo}>
         <Image
           style={styles.imagelogo}
-          source={require('../../assets/image/logo.png')}
+          source={require('../../../assets/image/logo.png')}
         />
       </View>
       <View style={styles.contaitext}>

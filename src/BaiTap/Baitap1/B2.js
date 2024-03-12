@@ -14,7 +14,7 @@ const B2 = () => {
           <View style={styles.headerlogo}>
             <Image
               style={styles.imagelogo}
-              source={require('../../assets/image/logo.png')}
+              source={require('../../../assets/image/logo.png')}
             />
             <Text style={styles.textlogo}>
               Audi<Text style={{fontWeight: 'normal'}}>Books.</Text>
@@ -23,7 +23,7 @@ const B2 = () => {
           <View style={styles.contaisetting}>
             <Image
               style={styles.imagesettings}
-              source={require('../../assets/image/Setting.png')}
+              source={require('../../../assets/image/Setting.png')}
             />
           </View>
         </View>

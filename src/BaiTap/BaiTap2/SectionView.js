@@ -3,7 +3,7 @@ import React from 'react';
 
 const SectionView = ({title, data}) => {
   return (
-    <View horizontal>
+    <View >
       <Text style={styles.title}>{title}</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {RenderItem(data)}
@@ -71,7 +71,7 @@ const styles = StyleSheet.create({
   image: {
     width: 300,
     height: 150,
-    marginTop: 5,
+    marginTop:5,
   },
   title: {
     fontWeight: 'bold',

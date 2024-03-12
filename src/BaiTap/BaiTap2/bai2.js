@@ -6,8 +6,7 @@ import SectionView from './SectionView';
 const bai2 = () => {
   return (
     <View style={styles.container}>
-      <ScrollView>
-        <SectionView title="Lịch Trình" data={danhsach}></SectionView>
+      <ScrollView >
         <SectionView title="Lịch Trình" data={danhsach}></SectionView>
       </ScrollView>
     </View>

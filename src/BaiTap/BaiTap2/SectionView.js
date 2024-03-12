@@ -3,7 +3,7 @@ import React from 'react';
 
 const SectionView = ({title, data}) => {
   return (
-    <View >
+    <View horizontal >
       <Text style={styles.title}>{title}</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         {RenderItem(data)}

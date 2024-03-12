@@ -5,11 +5,12 @@ import SectionView from './SectionView';
 
 const bai2 = () => {
   return (
-    <View style={styles.container}>
-      <ScrollView >
+    <ScrollView key={bai2}>
+      <View style={styles.container}>
         <SectionView title="Lịch Trình" data={danhsach}></SectionView>
-      </ScrollView>
-    </View>
+        <SectionView title="Lịch Trình" data={danhsach}></SectionView>
+      </View>
+    </ScrollView>
   );
 };
 

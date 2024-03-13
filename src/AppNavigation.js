@@ -8,7 +8,7 @@ const AppNavigation = () => {
     const shouldRenderBai1 = true; 
     return (
         <NavigationContainer>
-            {shouldRenderBai1 ? <TabNavigationBai2 /> : <TabNavigationBai1 />}
+            {shouldRenderBai1 ? <TabNavigationBai2 /> : <TabNavigationBai1 /> }
         </NavigationContainer>
     );
 };

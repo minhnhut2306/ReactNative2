@@ -58,7 +58,6 @@ const styles = StyleSheet.create({
     flex: 0,
     width: 20,
     height: 20,
-    backgroundColor: ' blue',
   },
   placeholdertitle: {
     flex: 10,

@@ -26,7 +26,7 @@ const RenderItem = data => {
       <Text style={styles.textbold}>Hình ảnh</Text>
       <View
         style={{width: '100%', alignItems: 'center', justifyContent: 'center'}}>
-        <Image style={styles.image} source={item.image} />
+        <Image style={styles.image } source={item.image} />
       </View>
     </View>
   ));

@@ -6,8 +6,8 @@ import TabNavigationBai3 from './BaiTap/Baitap3/TabNavigationBai3';
 import TabNavigationBai4 from './BaiTap/Baitap4/TabNavigationBai4';
 const AppNavigation = () => {
   const shouldRenderBai1 = false;
-  const shouldRenderBai3 = true;
-  const shouldRenderBai4 = false;
+  const shouldRenderBai3 = false;
+  const shouldRenderBai4 = true;
 
   return (
     <NavigationContainer>

@@ -7,36 +7,35 @@ import {
   View,
 } from 'react-native';
 import React, {useState} from 'react';
-import {launchCamera} from 'react-native-image-picker';
+import {launchImageLibrary} from 'react-native-image-picker';
 
-const Bai1 = ({navigation}) => {
+const Bai2 = ({navigation}) => {
   const clickme = () => {
-    navigation.navigate('Bai2');
+    navigation.navigate('Bai3');
   };
-  const commmonOptions = {
+  const commonOptions = {
     mediaType: 'photo',
     maxWidth: 500,
     maxHeight: 500,
   };
-  const CameraOptions = {
-    cameraType: 'front',
-    saveToPhotos: true,
-    ...commmonOptions,
+  const libraryOptions = {
+    seletLimit: 10,
+    ...commonOptions,
   };
   const [image, setImage] = useState();
-  const onOpenCamera = async () => {
-    const response = await launchCamera(CameraOptions);
+  const onOpenLibrary = async () => {
+    const response = await launchImageLibrary(libraryOptions);
     if (response?.assets) {
       setImage(response.assets);
     } else {
-      Alert.alert('Lỗi ', response.errorMessage);
+      Alert.alert('Có lỗi xảy ra', response.errorMessage);
     }
   };
   return (
     <View style={styles.container}>
       <View style={styles.containerbutton}>
-        <TouchableOpacity style={styles.btnbutton} onPress={onOpenCamera}>
-          <Text style={styles.textbutton}>Chụp</Text>
+        <TouchableOpacity style={styles.btnbutton} onPress={onOpenLibrary}>
+          <Text style={styles.textbutton}>Chọn ảnh</Text>
         </TouchableOpacity>
         <Image
           source={{
@@ -48,7 +47,7 @@ const Bai1 = ({navigation}) => {
         />
         <View style={styles.containerbuttonchuyen}>
           <TouchableOpacity style={styles.btnbutton} onPress={clickme}>
-            <Text style={styles.textbutton}>Chuyển bài 2</Text>
+            <Text style={styles.textbutton}>Chuyển bài 3</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -56,7 +55,7 @@ const Bai1 = ({navigation}) => {
   );
 };
 
-export default Bai1;
+export default Bai2;
 
 const styles = StyleSheet.create({
   container: {
@@ -92,7 +91,7 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   containerbuttonchuyen: {
-    marginTop: 150,
+    marginTop: 50,
     width: '100%',
     height: 40,
     marginTop: 40,

@@ -10,9 +10,10 @@ const Stack = createNativeStackNavigator();
 const TabNavigationBai4 = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
+     
+      <Stack.Screen name="Bai3" component={Bai3} /> 
       <Stack.Screen name="Bai1" component={Bai1} />
       <Stack.Screen name="Bai2" component={Bai2} />
-      <Stack.Screen name="Bai3" component={Bai3} />
     </Stack.Navigator>
   );
 };
